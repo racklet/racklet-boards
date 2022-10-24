@@ -1,6 +1,39 @@
-# base-repo-layout
+# Racklet Boards
 
-Template (base) repository file layout for Racklet projects.
+This repository documents the compatibility of different SBC boards with racklet.
+
+## Board Dimensions
+
+Board dimensions are collected to determine which boards are physically compatible
+with the racklet form factor. SBCs mounted to the rack must have an ethernet
+port available at the front panel which constrains the mounting orientation of
+the SBC. In order to compare board dimensions in a consistent way we choose the
+following naming convention.
+
+Dimensions are measured wrt. the primary side, which is defined as the side
+where the Ethernet port is located. If there are multiple ethernet ports,
+pick the (first) one that makes the width the smallest.
+
+![SBC front view](docs/diagrams/board-front-view.svg)
+
+- `width` - Length of the primary side of the PCB
+- `depth` - Length of the another side of the PCB.
+- `height` - Height of the board measured from the bottom of the PCB to the top of the tallest component.
+
+The width and depth represent the size of the PCB without any connectors,
+while the height represents the total height from the bottom of the PCB to
+the tallest point of the tallest connector (e.g. the lip on the USB connector
+on the Pi 4).
+
+The physical dimensions are collected under the file `physical.toml`.
+```toml
+[dimensions]
+# Example dimensions for a Raspberry Pi 4 Model B
+# https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf
+width = 56 # millimeters
+height = 18 # millimeters
+depth = 85 # millimeters
+```
 
 ## Contributing
 
