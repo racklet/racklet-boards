@@ -17,7 +17,7 @@ pick the (first) one that makes the width the smallest.
 ![SBC front view](docs/diagrams/board-front-view.svg)
 
 - `width` - Length of the primary side of the PCB
-- `depth` - Length of the another side of the PCB.
+- `depth` - Length of the other side of the PCB.
 - `height` - Height of the board measured from the bottom of the PCB to the top of the tallest component.
 
 The width and depth represent the size of the PCB without any connectors,
